@@ -23,6 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::resource('personajes',CharactersController::class);
 Route::resource('episodios',EpisodeController::class);
 Route::resource('usuarios',UserController::class);
-Route::post('login', [UserController::class, 'verificarCredenciales'])->name('login');
+Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('registro', [UserController::class, 'store'])->name('registro');
-Route::post('recuperacion', [UserController::class, 'recuperarContra'])->name('recuperacion');
+Route::post('recuperacion', [UserController::class, 'savePassword'])->name('recuperacion');
