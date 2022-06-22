@@ -8,8 +8,9 @@
     <title>Verifica tu correo Electronico</title>
 </head>
 <body>
-    <p>Hola recuerda que para poder seguir accediendo a tu correo debes validarlo con el siguiente codigo</p>
-    <p>56464864</p>
-    <a href="https://www.youtube.com" class="bottom">Validar Correo</a>
+    <p>Hola buen dia {{$user->name}} {{$user->lastname_pat}}, recuerda que para poder seguir accediendo a la api de Rick and morty </p>
+    <p>deberas validar tu correo electronico deberas acceder la siguiente clave</p>
+    <p> <h1>{{$user->email_verified_at}}</h1></p>
+
 </body>
 </html>

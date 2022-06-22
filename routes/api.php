@@ -27,6 +27,6 @@ Route::resource('usuarios',UserController::class);
 Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('registro', [UserController::class, 'store'])->name('registro');
 Route::post('recuperacion', [UserController::class, 'savePassword'])->name('recuperacion');
-Route::get('/validar',function (){
-    return "se envio el correo";
-});
+Route::post('validar', [UserController::class, 'validateEmail'])->name('validar');
+Route::post('editar', [UserController::class, 'editPassword'])->name('editar');
+
