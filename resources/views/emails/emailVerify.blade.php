@@ -10,5 +10,6 @@
 <body>
     <p>Hola recuerda que para poder seguir accediendo a tu correo debes validarlo con el siguiente codigo</p>
     <p>56464864</p>
+    <a href="https://www.youtube.com" class="bottom">Validar Correo</a>
 </body>
 </html>

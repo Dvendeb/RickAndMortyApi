@@ -7,18 +7,18 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class VerifyYourCount extends Mailable
+class VerifyYourAcount extends Mailable
 {
     use Queueable, SerializesModels;
-    public $distressCall;
+    public  $dato;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(String $distressCall)
+    public function __construct(string $dato)
     {
-        $this->distressCall = $distressCall;
+        $this->dato=$dato;
     }
 
     /**

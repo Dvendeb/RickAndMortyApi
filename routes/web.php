@@ -19,3 +19,4 @@ Route::get('/', function () {
 Route::get('/Documentacion',function (){
    return view('document');
 });
+

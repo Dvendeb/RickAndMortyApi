@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CharactersController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EpisodeController;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\VerifyYourAcount;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,3 +27,6 @@ Route::resource('usuarios',UserController::class);
 Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('registro', [UserController::class, 'store'])->name('registro');
 Route::post('recuperacion', [UserController::class, 'savePassword'])->name('recuperacion');
+Route::get('/validar',function (){
+    return "se envio el correo";
+});

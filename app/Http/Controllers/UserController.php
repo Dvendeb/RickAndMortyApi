@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use MongoDB\Driver\Session;
+use App\Mail\VerifyYourAcount;
 
 class
 
@@ -44,12 +45,13 @@ UserController extends Controller
     {
         $password = $request->input('password');
         $validate = $request->input('validate');
+        $email=$request->input('email');
 
-        if (!$request->email || !$password || !$validate) {
+        if (!$email || !$password || !$validate) {
             return response()->json(['error' => 'Faltan datos para poder registrarte'], 400);
         }
 
-        $usuario = User::where('email', $request->email)->first();
+        $usuario = User::where('email', $email)->first();
         if ($usuario) {
             return response()->json(['error' => 'El correo ya esta registrado!'], 400);
         }
@@ -68,7 +70,7 @@ UserController extends Controller
         $user->date_birth = $request->input('fecha_nacimiento');
         $user->status = "no Verificado";
         $user->save();
-        Mail::to($user->email)->send(new VerifyYourCount($user->name));
+        Mail::to($email)->send(new VerifyYourAcount("diego"));
         return response()->json(['message' => 'Usuario creado correctamente'], 201);
     }
 
